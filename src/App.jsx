@@ -13,7 +13,7 @@ import {
 function App() {
   const [todos, setTodos] = useState([]);
   const [todoText, setTodoText] = useState("");
-  const [todoStatus, setTodoStatus] = useState(false);
+  const [todoStatus] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState("");
@@ -61,7 +61,7 @@ function App() {
     };
 
     getTodos();
-  }, []);
+  }, [todosCollection]);
 
   const updateTodo = async (id, Name, Status) => {
     const newTodo = { Name, Status };
